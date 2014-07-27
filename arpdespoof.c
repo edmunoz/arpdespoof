@@ -10,29 +10,36 @@ void antiscan();
 int main()
 {
 	int opcion;
-	encabezado();
-	printf(" MENÚ\n");
-	printf("  1) ARP SPOOFING\n");
-	printf("  2) ANTI SCAN\n");
-	printf("  3) RESUMEN TEÓRICO\n");
-	printf("  4) SALIR\n");	
-	printf("  ELIJA UNA OPCIÓN :");
-	scanf("%d",&opcion);
+	do{
+		system("clear");
+		encabezado();
+		printf(" MENÚ\n");
+		printf("  1) ARP SPOOFING\n");
+		printf("  2) ANTI SCAN\n");
+		printf("  3) RESUMEN TEÓRICO\n");
+		printf("  4) SALIR\n");	
+		printf("  ELIJA UNA OPCIÓN :");
+		scanf("%d",&opcion);
+	}while(opcion>4);
+	
 	switch(opcion){
-		case 1:
+		case 1:{
+			system("clear");
 			arpdespoof();
+		}
 			break;
-		case 2:			
+		case 2:{
+			system("clear");		
 			antiscan();
+		}
 			break;
-		case 3:
+		case 3:{
+			system("clear");
 			resumenTeorico();
-			break;
-		case 4:
-			return 0;
+		}
 			break;			
 		default:
-			printf("Ha ingresado un numero no valido\n");
+			return 0;
 			break;
 	}
 
@@ -44,11 +51,39 @@ int validacion(){
 }
 
 void arpdespoof(){
+	int opcion;
+	printf("\n\t\tARP SPOOFING\n");
+	do{
+		printf("\n\nDesea regresar al Menu Principal:\n1)SI\n2)NO");
+		printf("\n  ELIJA UNA OPCIÓN :");
+		scanf("%d",&opcion);
+	}while(opcion>2);
 
+	switch(opcion){
+		case 1:{
+			system("clear");
+			main();
+		}
+			break;
+	}
 }
 
 void antiscan(){
+	int opcion;
+	printf("\n\t\tANTI-SCAN\n");
+	do{
+		printf("\n\nDesea regresar al Menu Principal:\n1)SI\n2)NO");
+		printf("\n  ELIJA UNA OPCIÓN :");
+		scanf("%d",&opcion);
+	}while(opcion>2);
 
+	switch(opcion){
+		case 1:{
+			system("clear");
+			main();
+		}
+			break;
+	}
 }
 
 
@@ -66,6 +101,8 @@ void encabezado(){
 }
 
 void resumenTeorico(){
+	int opcion;
+	printf("\n\t\tRESUMEN TEÓRICO\n");
 	//Paquete ARP
 	printf("\n******************* PAQUETE ARP ***********************\n\n");
 	printf("<------------------------32bits----------------------->\n");
@@ -98,7 +135,19 @@ void resumenTeorico(){
 	printf("|    Y SFD   |  DESTINO  |  ORIGEN   | (0x0806) |                    |        |\n");
 	printf("|____________|___________|___________|__________|____________________|________|\n");
 	
+	do{
+		printf("\n\nDesea regresar al Menu Principal:\n1)SI\n2)NO");
+		printf("\n  ELIJA UNA OPCIÓN :");
+		scanf("%d",&opcion);
+	}while(opcion>2);
 
+	switch(opcion){
+		case 1:{
+			system("clear");
+			main();
+		}
+			break;
+	}
 }
 
 
